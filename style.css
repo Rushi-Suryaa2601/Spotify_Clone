@@ -5,8 +5,8 @@
     
 }
 body{
-    /* background-color: black;
-    color: white; */
+    background-color: black;
+    color: white;
     zoom: 200%;
 }
 
@@ -18,10 +18,13 @@ body{
 }
 .right{
     width: 75vw;
+    margin: 16px 0;
 }
 
 .home{
-    padding: 20px;
+
+    padding-left: 20px
+
 }
 
 .home ul li{
@@ -29,7 +32,157 @@ body{
     list-style: none;
     display: flex;
     gap: 15px;
-    padding-top: 10px;
+    padding-top: 15px;
     align-items: center;
 
 }
+
+.heading{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        
+        align-items: center;
+
+}
+
+.library{
+    min-height: 80vh;
+    position: relative;
+}
+.heading img{
+    width: 25px;
+}
+
+.heading h2{
+    font-size: 15px;
+}
+
+.footer{
+    display: flex;
+    font-size: 11px;
+    gap: 22px;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    
+}
+.footer a{
+    color: #8c8c8c;
+    text-decoration: none;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color:#0f0f0f;
+}
+
+.header > *{
+    padding: 10px;
+}
+
+.sotifyPlalist{
+    padding: 16px;
+}
+
+.sotifyPlalist .card{
+    width: 178px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #181818;
+    position: relative;
+}
+
+.cardcontainer{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 10px;
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+.card:hover{
+    background-color: rgb(46, 43, 43);
+}
+
+.card > *{
+    padding-top: 5px;
+
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.card h2,p{
+    font-size: 15px;
+}
+
+.circular-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 160px;
+    right: 16px;
+    opacity: 0;
+    transition: all 1s ease-out;
+    
+  }
+
+.circular-button:hover {
+    opacity: 1;
+    top: 150px;
+  }
+
+  .svg-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .buttons > *{
+    margin: 0 12px;
+  }
+
+  .signup_btn{
+    background-color: #0f0f0f;
+    color: rgb(209, 204, 204);
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+  
+.signup_btn:hover{
+    font-size: 15px;
+    color: white;
+}
+
+.login_btn{
+    background-color: white;
+    color:black;
+    font-weight: bold;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 15px;
+    padding:15px 30px ;
+}
+
+ 
+  
