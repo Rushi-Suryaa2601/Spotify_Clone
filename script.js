@@ -1,3 +1,4 @@
+let CurrentSong=new Audio();
 async function getSongs(){
 
     let a=await fetch("http://127.0.0.1:5500/songs")
@@ -20,7 +21,20 @@ async function getSongs(){
 }
 getSongs()
 
+const playMusic=(track)=>{
+    // let audio=new Audio("/songs/" +track)
+    CurrentSong.src="/songs/"+track
+
+    CurrentSong.play()
+    play.src="pause.svg"
+    document.querySelector(".songinfo").innerHTML=track
+    document.querySelector(".songtime").innerHTML="00:00/00:00"
+
+}
+
 async function main(){
+
+   
 
     let songs= await getSongs()
     console.log(songs)
@@ -43,14 +57,39 @@ async function main(){
         </li>`
         
     }
+    
+    //Ataach an event listener to each song
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
+        e.addEventListener("click",()=>{
+            console.log(e.querySelector(".info").firstElementChild.innerHTML)
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+        })
 
-    // play first song
-    var audio = new Audio(songs[1])
-    audio.play()
+    })
 
-    audio.addEventListener("loadeddata",() => { 
+    //Attach event listener to next and previous song
+    play.addEventListener("click",()=>{
+        if(CurrentSong.paused){
+            CurrentSong.play()
+            play.src="pause.svg"
+        }
+        else{
+            CurrentSong.pause()
+            play.src="play.svg"
+        }
+    })
+
+    // // play first song
+    // var audio = new Audio(songs[1])
+    // audio.play()
+
+    // audio.addEventListener("loadeddata",() => { 
        
-        console.log(audio.duration,audio.currentSrc,audio.currentTime)
-     })
+    //     console.log(audio.duration,audio.currentSrc,audio.currentTime)
+    //  })
+
+
+    //listen for timeupdate event
+
 }
 main()
