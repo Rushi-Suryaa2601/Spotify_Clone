@@ -19,6 +19,7 @@ body{
 .right{
     width: 75vw;
     margin: 16px 0;
+    position: relative;
 }
 
 .home{
@@ -79,6 +80,7 @@ body{
     display: flex;
     justify-content: space-between;
     background-color:#0f0f0f;
+    height: 75px;
 }
 
 .header > *{
@@ -153,7 +155,7 @@ body{
   }
 
   .buttons > *{
-    margin: 0 12px;
+    margin: 0 15px;
   }
 
   .signup_btn{
@@ -180,9 +182,60 @@ body{
     outline: none;
     cursor: pointer;
     border-radius: 25px;
-    font-size: 15px;
+    
     padding:15px 30px ;
 }
 
+.login_btn:hover{
+    font-size: 16px;
+    padding: 17px 32px;
+    transition-delay: 1s  ease-in;
+
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: #cfd4d1;
+    padding: 12px;
+    width: 90%;
+    color: black;
+   
+}
+.songButtons{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.songList ul{
+    padding: 0 24px;
+
+}
  
+.songList ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 2px solid white;
+    margin: 10px 0;
+    padding: 13px;
+    border-radius: 7px;
+    font-size: 11px;
+}
+
+.playnow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.playnow span{
+    font-size: 14px;
+    width: 64px;
+    
+}
   
