@@ -104,7 +104,7 @@ body{
     gap: 10px;
     flex-wrap: wrap;
     margin: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 70vh;
 }
 .card:hover{
@@ -205,6 +205,7 @@ body{
     color: black;
     width: 34vw;
    
+   
 }
 .songButtons{
     display: flex;
@@ -282,3 +283,119 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+.hamburger{
+    display:none;
+}
+.Close{
+    display: none;
+}
+
+@media (max-width:1400px) {
+    .left{
+        width: 272px;
+        /* background-color: red; */
+        background-color: #0f0f0f;
+        position:absolute;
+        left:-250%;
+        transition: all .3s;
+        z-index: 1;
+
+    }
+
+    .right{
+        width: 100vw;
+    }
+    .playbar{
+        width: 95%;
+        
+    }
+
+    .hamburger{
+        display: block;
+    }
+    .Close{
+        display: block;
+    }
+
+    .left .Close{
+        position: absolute;
+        right: 25px;
+        top: 40px;
+    }
+    .sotifyPlalist .card {
+        width: 112px;
+    }
+    .songList .info{
+        font-size: 10px;
+    }
+    .songList ul li{
+        gap: 13px;
+    }
+    .seekbar{
+        width: 95%;
+    }
+    
+    
+   
+    
+}
+
+@media (max-width:670px) {
+    .signup_btn{
+        font-size: 12px;
+
+    }
+    .login_btn{
+        font-size: 10px;
+        
+    }
+    
+    .nav{
+        display: flex;
+    }
+
+    .buttons{
+        display: flex;
+    }
+    .playbar{
+        width: 65vw;
+        
+    }
+    .seekbar{
+        width: 92%;
+    }
+    .sotifyPlalist .card {
+        width: 95px;
+    }
+    .card h2, p {
+        font-size: 11px;
+    }
+
+    .sotifyPlalist >h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .songList .info{
+        font-size: 10px;
+    }
+    .songList ul li{
+        gap: 13px;
+    }
+}
+
+@media (max-width:380px){
+    .abovebar{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+    }
+
+    .playbar{
+        height: 83px;
+        
+    }
+}
+
+

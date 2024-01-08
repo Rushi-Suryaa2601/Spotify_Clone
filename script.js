@@ -126,3 +126,16 @@ async function main(){
 
 }
 main()
+
+//Add an event listener for hamburger
+document.querySelector(".hamburger").addEventListener("click",() => { 
+    document.querySelector(".left").style.left="0"
+ })
+
+ //Add an event listener for hamburger
+ document.querySelector(".Close").addEventListener("click",() => { 
+    document.querySelector(".left").style.left="-250%"
+  })
+
+  //Add an event listener for previus and next
+
