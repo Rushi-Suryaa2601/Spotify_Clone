@@ -21,13 +21,31 @@ async function getSongs(){
 }
 getSongs()
 
-const playMusic=(track)=>{
+function convertSecondsToMinutesAndSeconds(seconds) {
+    if (isNaN(seconds) || seconds < 0) {
+      return "Invalid input";
+    }
+  
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+  
+    const formattedMinutes = String(minutes.toFixed(0)).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds.toFixed(0)).padStart(2, '0');
+  
+    return `${formattedMinutes}:${formattedSeconds}`;
+  }
+
+const playMusic=(track,pause=false)=>{
     // let audio=new Audio("/songs/" +track)
     CurrentSong.src="/songs/"+track
+    if(!pause){
 
-    CurrentSong.play()
-    play.src="pause.svg"
-    document.querySelector(".songinfo").innerHTML=track
+        CurrentSong.play()
+        play.src="pause.svg"
+        
+    }
+
+    document.querySelector(".songinfo").innerHTML=decodeURI(track)
     document.querySelector(".songtime").innerHTML="00:00/00:00"
 
 }
@@ -37,7 +55,8 @@ async function main(){
    
 
     let songs= await getSongs()
-    console.log(songs)
+    // console.log(songs)
+    playMusic(songs[0],true)
 
     let songUl=document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs) {
@@ -90,6 +109,17 @@ async function main(){
 
 
     //listen for timeupdate event
+    CurrentSong.addEventListener("timeupdate",()=>{
+        console.log(CurrentSong.currentTime,CurrentSong.duration)
+        document.querySelector(".songtime").innerHTML=`${convertSecondsToMinutesAndSeconds(CurrentSong.currentTime)}/${convertSecondsToMinutesAndSeconds(CurrentSong.duration)}`
+
+        document.querySelector(".circle").style.left=(CurrentSong.currentTime/CurrentSong.duration)*100+"%";
+    })
+
+    //Add eventlistener to seekbar
+    document.querySelector(".seekbar").addEventListener("click",e=>{
+        document.querySelector(".circle").style.left=(e.offsetX/e.target.getBoundingClientRect().width)*100 +"%";
+    })
 
 }
 main()
