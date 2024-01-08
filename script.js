@@ -21,19 +21,19 @@ async function getSongs(){
 }
 getSongs()
 
-function convertSecondsToMinutesAndSeconds(seconds) {
+function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
-      return "Invalid input";
+        return "00:00";
     }
-  
+
     const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-  
-    const formattedMinutes = String(minutes.toFixed(0)).padStart(2, '0');
-    const formattedSeconds = String(remainingSeconds.toFixed(0)).padStart(2, '0');
-  
+    const remainingSeconds = Math.floor(seconds % 60);
+
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+
     return `${formattedMinutes}:${formattedSeconds}`;
-  }
+}
 
 const playMusic=(track,pause=false)=>{
     // let audio=new Audio("/songs/" +track)
@@ -111,14 +111,17 @@ async function main(){
     //listen for timeupdate event
     CurrentSong.addEventListener("timeupdate",()=>{
         console.log(CurrentSong.currentTime,CurrentSong.duration)
-        document.querySelector(".songtime").innerHTML=`${convertSecondsToMinutesAndSeconds(CurrentSong.currentTime)}/${convertSecondsToMinutesAndSeconds(CurrentSong.duration)}`
+        document.querySelector(".songtime").innerHTML=`${secondsToMinutesSeconds(CurrentSong.currentTime)}/${secondsToMinutesSeconds(CurrentSong.duration)}`
 
         document.querySelector(".circle").style.left=(CurrentSong.currentTime/CurrentSong.duration)*100+"%";
     })
 
     //Add eventlistener to seekbar
-    document.querySelector(".seekbar").addEventListener("click",e=>{
-        document.querySelector(".circle").style.left=(e.offsetX/e.target.getBoundingClientRect().width)*100 +"%";
+    document.querySelector(".seekbar").addEventListener("click", e => {
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width/2) * 100;
+        document.querySelector(".circle").style.left = percent + "%";
+
+        CurrentSong.currentTime = ((CurrentSong.duration) * percent) / 100
     })
 
 }
