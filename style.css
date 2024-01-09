@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --a:0;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -109,6 +113,8 @@ body{
 }
 .card:hover{
     background-color: rgb(46, 43, 43);
+    transition: all 0.9s;
+    --a:1;
 }
 
 .card > *{
@@ -139,15 +145,12 @@ body{
     position: absolute;
     top: 160px;
     right: 16px;
-    opacity: 0;
+    opacity: var(--a);
     transition: all 1s ease-out;
     
   }
 
-.circular-button:hover {
-    opacity: 1;
-    top: 150px;
-  }
+
 
   .svg-icon {
     width: 30px;
@@ -264,7 +267,7 @@ body{
     position: absolute;
     bottom: 0;
     border-radius: 10px ;
-    margin: 8px 0;
+    margin: 12px 0;
     cursor: pointer;
 }
 
@@ -305,10 +308,18 @@ body{
     gap: 20px;
 }
 
-@media (max-width:1400px) {
+.volume{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ /* @media (max-width:1400px) { 
     .left{
         width: 272px;
-        /* background-color: red; */
+        background-color: red; 
         background-color: #0f0f0f;
         position:absolute;
         left:-250%;
@@ -317,7 +328,13 @@ body{
         padding: 0;
 
     }
+   .music{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
    
+   }
 
     .right{
         width: 100vw;
@@ -353,6 +370,9 @@ body{
     .seekbar{
         width: 95%;
     }
+    .songButtons{
+        margin: auto;
+    }
     
     
    
@@ -360,6 +380,12 @@ body{
 }
 
 @media (max-width:670px) {
+    .abovebar{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+    }
     .signup_btn{
         font-size: 12px;
 
@@ -377,11 +403,16 @@ body{
         display: flex;
     }
     .playbar{
-        width: 65vw;
+        width: 41vw;
+        height: 110px;
         
     }
     .seekbar{
         width: 92%;
+        
+    }
+    .songinfo{
+       width: auto;
     }
     .sotifyPlalist .card {
         width: 95px;
@@ -400,9 +431,12 @@ body{
     .songList ul li{
         gap: 13px;
     }
+    .music{
+        flex-direction: column;
+        gap: 3px;
+    }
 }
-
-@media (max-width:380px){
+ @media (max-width:380px){
     .abovebar{
         flex-direction: column;
         gap: 10px;
@@ -411,7 +445,7 @@ body{
     }
 
     .playbar{
-        height: 83px;
+        height: 138px;
         
         
     }
@@ -421,7 +455,21 @@ body{
     .songButtons{
         margin: auto;
     }
+    .music{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        flex-direction: column;
+       }
+       .seekbar{
+        width: 92%;
+        margin-bottom: 19px;
+        
+    }
 } 
+*/   
+
  
 
 
