@@ -1,4 +1,5 @@
 let CurrentSong=new Audio();
+let songs;
 async function getSongs(){
 
     let a=await fetch("http://127.0.0.1:5500/songs")
@@ -54,7 +55,7 @@ async function main(){
 
    
 
-    let songs= await getSongs()
+    songs= await getSongs()
     // console.log(songs)
     playMusic(songs[0],true)
 
@@ -138,4 +139,28 @@ document.querySelector(".hamburger").addEventListener("click",() => {
   })
 
   //Add an event listener for previus and next
+  previous.addEventListener("click",() => { 
+      console.log("previous clicked")
+      let index=songs.indexOf(CurrentSong.src.split("/").slice(-1)[0])
+    
+    console.log(songs,index)
+    if((index-1)>=1){
+        playMusic(songs[index-1])
 
+    }
+    
+    })
+
+    //Add an event listener for previus and next
+  next.addEventListener("click",() => { 
+    console.log(CurrentSong.src)
+    CurrentSong.pause()
+    console.log("next clicked")
+    let index=songs.indexOf(CurrentSong.src.split("/").slice(-1)[0])
+    
+    console.log(songs,index)
+    if((index+1)<songs.length){
+        playMusic(songs[index+1])
+
+    }
+   })

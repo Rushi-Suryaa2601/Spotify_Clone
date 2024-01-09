@@ -210,7 +210,10 @@ body{
 .songButtons{
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
+    width: 160px;
+    margin-right: 132px;
+    
 }
 
 .songButtons img{
@@ -278,6 +281,10 @@ body{
 
 .songinfo .songtime{
     padding: 0 20px;
+    
+}
+.songinfo{
+    width: 215px;
 }
 .abovebar{
     display: flex;
@@ -291,6 +298,13 @@ body{
     display: none;
 }
 
+.music{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 @media (max-width:1400px) {
     .left{
         width: 272px;
@@ -300,14 +314,17 @@ body{
         left:-250%;
         transition: all .3s;
         z-index: 1;
+        padding: 0;
 
     }
+   
 
     .right{
         width: 100vw;
+        padding: 0;
     }
     .playbar{
-        width: 95%;
+        width: 92%;
         
     }
 
@@ -316,11 +333,12 @@ body{
     }
     .Close{
         display: block;
+        
     }
 
     .left .Close{
         position: absolute;
-        right: 25px;
+        right: 5px;
         top: 40px;
     }
     .sotifyPlalist .card {
@@ -395,7 +413,16 @@ body{
     .playbar{
         height: 83px;
         
+        
     }
-}
+    .songinfo{
+        width: auto;
+    }
+    .songButtons{
+        margin: auto;
+    }
+} 
+ 
+
 
 
