@@ -313,7 +313,11 @@ body{
     gap: 10px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
+}
+.range input{
+    cursor: pointer;
 }
 
  /* @media (max-width:1400px) { 
