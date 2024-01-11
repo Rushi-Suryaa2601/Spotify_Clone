@@ -215,7 +215,7 @@ body{
     justify-content: center;
     gap: 10px;
     width: 160px;
-    margin-right: 132px;
+    /* margin-right: 132px; */
     
 }
 
@@ -287,7 +287,7 @@ body{
     
 }
 .songinfo{
-    width: 215px;
+    width: 250px;
 }
 .abovebar{
     display: flex;
