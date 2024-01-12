@@ -18,11 +18,11 @@ body{
 
 .left{
     width: 25vw;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .right{
     width: 75vw;
-    margin: 16px 0;
+    /* margin: 16px 0; */
     position: relative;
 }
 
@@ -296,6 +296,7 @@ body{
 
 .hamburger{
     display:none;
+    cursor: pointer;
 }
 .Close{
     display: none;
@@ -320,10 +321,13 @@ body{
     cursor: pointer;
 }
 
- /* @media (max-width:1400px) { 
+
+    
+
+@media (max-width:2000px) { 
     .left{
-        width: 272px;
-        background-color: red; 
+        width: 500px;
+        /* background-color: red;  */
         background-color: #0f0f0f;
         position:absolute;
         left:-250%;
@@ -343,6 +347,7 @@ body{
     .right{
         width: 100vw;
         padding: 0;
+        overflow: hidden;
     }
     .playbar{
         width: 92%;
@@ -363,7 +368,7 @@ body{
         top: 40px;
     }
     .sotifyPlalist .card {
-        width: 112px;
+        width: 157px;
     }
     .songList .info{
         font-size: 10px;
@@ -419,7 +424,7 @@ body{
        width: auto;
     }
     .sotifyPlalist .card {
-        width: 95px;
+        width: 192px;
     }
     .card h2, p {
         font-size: 11px;
@@ -439,40 +444,15 @@ body{
         flex-direction: column;
         gap: 3px;
     }
+    .hamburger{
+        height: 30px;
+    }
+
+    .header > *{
+        padding: 7px;
+    }
 }
- @media (max-width:380px){
-    .abovebar{
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-
-    }
-
-    .playbar{
-        height: 138px;
-        
-        
-    }
-    .songinfo{
-        width: auto;
-    }
-    .songButtons{
-        margin: auto;
-    }
-    .music{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 7px;
-        flex-direction: column;
-       }
-       .seekbar{
-        width: 92%;
-        margin-bottom: 19px;
-        
-    }
-} 
-*/   
+  
 
  
 
