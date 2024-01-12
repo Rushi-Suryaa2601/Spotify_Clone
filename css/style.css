@@ -22,7 +22,7 @@ body{
 }
 .right{
     width: 75vw;
-    /* margin: 16px 0; */
+    margin: 5px ; 
     position: relative;
 }
 
@@ -387,6 +387,71 @@ body{
    
     
 }
+@media (max-width:768px) {
+    .abovebar{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+    }
+    .signup_btn{
+        font-size: 12px;
+
+    }
+    .login_btn{
+        font-size: 10px;
+        
+    }
+    
+    .nav{
+        display: flex;
+    }
+
+    .buttons{
+        display: flex;
+    }
+    .playbar{
+        width: 41vw;
+        height: 110px;
+        
+    }
+    .seekbar{
+        width: 92%;
+        
+    }
+    .songinfo{
+       width: auto;
+    }
+    .sotifyPlalist .card {
+        width: 192px;
+    }
+    .card h2, p {
+        font-size: 11px;
+    }
+
+    .sotifyPlalist >h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .songList .info{
+        font-size: 10px;
+    }
+    .songList ul li{
+        gap: 13px;
+    }
+    .music{
+        flex-direction: column;
+        gap: 3px;
+    }
+    .hamburger{
+        height: 30px;
+    }
+
+    .header > *{
+        padding: 7px;
+    }
+}
+  
 
 @media (max-width:670px) {
     .abovebar{
