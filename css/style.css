@@ -159,6 +159,10 @@ body{
 
   .buttons > *{
     margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
   }
 
   .signup_btn{
@@ -169,10 +173,11 @@ body{
     border: none;
     outline: none;
     cursor: pointer;
+    font-size: 12px;
 }
   
 .signup_btn:hover{
-    font-size: 15px;
+    padding: 10px 10px;
     color: white;
 }
 
@@ -185,12 +190,13 @@ body{
     outline: none;
     cursor: pointer;
     border-radius: 25px;
+
     
     padding:15px 30px ;
 }
 
 .login_btn:hover{
-    font-size: 16px;
+    /* font-size: 16px; */
     padding: 17px 32px;
     transition-delay: 1s  ease-in;
 
