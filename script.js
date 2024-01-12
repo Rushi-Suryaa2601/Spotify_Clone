@@ -1,6 +1,10 @@
 let CurrentSong=new Audio();
 let songs;
 let currFolder;
+if (document.body.clientWidth < 1920) {
+    viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute('content', 'width=device-width, initial-scale=0.67, user-scalable=0');
+  }
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
         return "00:00";
@@ -33,6 +37,9 @@ async function getSongs(folder){
         }
         
     }
+    
+
+    //show all songs in playlist
     let songUl=document.querySelector(".songList").getElementsByTagName("ul")[0]
     songUl.innerHTML=""
     for (const song of songs) {
@@ -61,6 +68,7 @@ async function getSongs(folder){
         })
 
     })
+    return songs
 }
 // getSongs()
 
@@ -124,6 +132,7 @@ async function displayAlbum(){
             
         e.addEventListener("click", async item=>{
             songs=await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+            playMusic(songs[0])
             
         })
         
